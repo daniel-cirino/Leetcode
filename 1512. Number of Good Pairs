@@ -1,0 +1,46 @@
+#Dictionary/Hash Table to store the number of times an element is repeated
+#Record total number of pairs (num)
+#Iterate through the nums list
+#Check to see if each element has already been seen, if not add it to the Hash Table
+#If it has been seen, but only once, just add 1 to "num"
+#If it has been seen, multiple times. Add the number of repeated times to "num"
+#Increment the number of reapeated times by 1.
+#Move onto next element
+class Solution:
+    
+    # search for duplicate numbers
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        
+        # number of good pairs
+        repeat = {}
+        num = 0
+        
+        # for every element in nums
+        for i in range(len(nums)):
+            
+            # number of repeated digits
+            if nums[i] in repeat:
+                
+                # count number of pairs based on duplicate values
+                if repeat[nums[i]] == 1:
+                    num += 1
+                else:
+                    num += repeat[nums[i]]
+                
+                # increment the number of counts
+                repeat[nums[i]] += 1
+            # number has not been seen before
+            else:
+                repeat[nums[i]] = 1
+        # return
+        return num
+        
+  class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        pairs = 0
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if nums[i] == nums[j] and i < j:
+                    pairs += 1
+        return pairs
+        
