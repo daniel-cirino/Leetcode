@@ -1,0 +1,14 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        arr = []
+        for i, j in zip(nums[:n], nums[n:]):
+            arr += [i, j]
+        return arr
+    
+    # class Solution:
+    # def shuffle(self, nums: List[int], n: int) -> List[int]:
+        # arr = []
+        # return [num for t in zip(nums[:n], nums[n:]) for num in t]
+    
+    
+            
