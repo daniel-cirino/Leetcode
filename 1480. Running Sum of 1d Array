@@ -1,0 +1,11 @@
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        arr = []
+        count = 0
+        arr.append(nums[0])
+        for i in range(1, len(nums)):
+            arr.append(nums[i] + arr[count])
+            count += 1
+        return arr
+            
+            
