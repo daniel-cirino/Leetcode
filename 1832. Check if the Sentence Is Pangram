@@ -1,0 +1,12 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        mapping = {}
+        count = 0
+        for i in sentence:
+            if i not in mapping:
+                mapping[i] = 1
+        
+        if len(mapping.keys()) <  26:
+            return False
+        
+        return True
