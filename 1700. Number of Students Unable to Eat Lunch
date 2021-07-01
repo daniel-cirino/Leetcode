@@ -1,0 +1,19 @@
+class Solution:
+    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+        n = len(students) # len 4
+        count = 0 
+        while n != count: # while 4 not equal to count
+            if students[0] == sandwiches[0]: # if students and sandwiches value are the same
+                students.pop(0) # pop students 0th index
+                sandwiches.pop(0) # pop sandwiches 0th index
+                n = len(students) # len becomes 3
+                count = 0 # count reset to 0 
+            else:
+                x = students[0] # if 0th index students not equal with sandwiches 0th index. store 0th index of students inside x
+                students.pop(0)  # pop students 0th index out
+                students.append(x) # append it to the back of the array
+                n = len(students) # update lenth of students
+                count += 1 # counts as a student that cant eat
+                # if the length becomes equal to count, that means that all students in the array cannot eat so we come out the for loop
+
+        return count
