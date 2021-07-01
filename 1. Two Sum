@@ -1,0 +1,12 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        prev_map = {}
+        
+        for i, n in enumerate(nums):
+            diff = target - n # target - n. 9-2 = 7. Then if we find a 7. that is the answer.
+            if diff in prev_map: # if diff exists
+                return [prev_map[diff], i] # return the index of diff and the index i as the result
+            else:
+                prev_map[n] = i
+        
